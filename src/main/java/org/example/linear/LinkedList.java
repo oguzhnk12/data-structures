@@ -30,7 +30,7 @@ public class LinkedList {
         }
         return list;
     }
-    public static void printList(LinkedList list)
+    public static void print(LinkedList list)
     {
         Node current = list.head;
         System.out.print("List: ");
@@ -39,7 +39,7 @@ public class LinkedList {
             current = current.next;
         }
     }
-    public static void deleteNode(LinkedList list, int data){
+    public static void delete(LinkedList list, int data){
 
         if (list.head == null) {return;}
 

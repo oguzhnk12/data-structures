@@ -1,5 +1,6 @@
 package org.example.linear;
 
+
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
@@ -23,9 +24,13 @@ public class Stack {
         stack = Arrays.copyOf(stack, stack.length - 1);
         return value;
     }
-    public void printStack() {
-        for (int i = 0; i <= stack.length - 1; i++) {
-            System.out.print(stack[i] + " ");
+    public void print() {
+        System.out.println(Arrays.toString(stack));
+    }
+    public int peek() {
+        if (stack.length == 0) {
+            throw new EmptyStackException();
         }
+        return stack[stack.length - 1];
     }
 }
