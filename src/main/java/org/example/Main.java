@@ -6,21 +6,21 @@ import org.example.linear.Queue;
 import org.example.linear.Stack;
 import org.example.nonlinear.BinarySearchTree;
 import org.example.nonlinear.BinaryTree;
+import org.example.nonlinear.MinHeap;
 
 public class Main {
     public static void main(String[] args) {
+        MinHeap heap = new MinHeap(10);
 
-            BinarySearchTree bst = new BinarySearchTree();
+        heap.insert(40);
+        heap.insert(20);
+        heap.insert(10);
+        heap.insert(25);
+        heap.insert(50);
 
-            int[] values = {50, 30, 70, 20, 40, 60, 80};
-            for (int val : values) {
-                bst.insert(val);
-            }
+        heap.printHeap(); // Min Heap: 10 25 20 40 50 (yapı değişebilir ama kurala uyar)
 
-            bst.printInorder();      // 20 30 40 50 60 70 80
-            bst.printPreorder();     // 50 30 20 40 70 60 80
-            bst.printPostorder();    // 20 40 30 60 80 70 50
-            bst.printLevelOrder();   // 50 30 70 20 40 60 80
-
+        System.out.println("Çıkarılan minimum: " + heap.extractMin());
+        heap.printHeap();
     }
 }
